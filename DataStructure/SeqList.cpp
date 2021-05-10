@@ -12,11 +12,11 @@
 #endif
 #endif  // _DEBUG
 
-//³õÊ¼»¯Á´±í
+//åˆå§‹åŒ–é“¾è¡¨
 void SeqListInit(struct SeqList* ps, int initCap)
 {
 	assert(ps);
-	//1.¿ª±Ù¿Õ¼ä
+	//1.å¼€è¾Ÿç©ºé—´
 	ps->array = (DataType*)malloc(sizeof(DataType) * initCap);
 	assert(ps->array);
 	if (ps->array == NULL)
@@ -24,16 +24,16 @@ void SeqListInit(struct SeqList* ps, int initCap)
 		printf("malloc fail");
 		return;
 	}
-	//2.ÉèÖÃÄ¬ÈÏÈİÁ¿
+	//2.è®¾ç½®é»˜è®¤å®¹é‡
 	ps->capacity = initCap;
-	//3.ÉèÖÃ³õÊ¼ÓĞĞ§¸öÊı
+	//3.è®¾ç½®åˆå§‹æœ‰æ•ˆä¸ªæ•°
 	ps->size = 0;
 }
-//Çå¿ÕÁ´±í
+//æ¸…ç©ºé“¾è¡¨
 void SeqListDestroy(SeqList* ps)
 {
 	assert(ps);
-	//Èç¹ûps->arayÓĞ¿Õ¼ä
+	//å¦‚æœps->arayæœ‰ç©ºé—´
 	if (ps->array)
 	{
 		free(ps->array);
@@ -42,7 +42,7 @@ void SeqListDestroy(SeqList* ps)
 		ps->size = 0;
 	}
 }
-//Î²²åÒ»¸ödata
+//å°¾æ’ä¸€ä¸ªdata
 void SeqListPushBack(SeqList* ps, DataType data)
 {
 	assert(ps);
@@ -50,7 +50,7 @@ void SeqListPushBack(SeqList* ps, DataType data)
 		SeqListReserve(ps, SeqListCapacity(ps) << 1);
 	ps->array[ps->size++] = data;
 }
-//Î²É¾Ò»¸ödata
+//å°¾åˆ ä¸€ä¸ªdata
 void SeqListPopBack(SeqList* ps)
 {
 	assert(ps);
@@ -61,7 +61,7 @@ void SeqListPopBack(SeqList* ps)
 	}
 	ps->size--;
 }
-//ÔÚposÎ»ÖÃ²åÈëdata
+//åœ¨posä½ç½®æ’å…¥data
 void SeqListInsert(SeqList* ps, int pos, DataType data)
 {
 	assert(ps);
@@ -79,7 +79,7 @@ void SeqListInsert(SeqList* ps, int pos, DataType data)
 	ps->array[pos] = data;
 	ps->size++;
 }
-//ÔÚposÎ»ÖµÉ¾³ıdata
+//åœ¨posä½å€¼åˆ é™¤data
 void SeqListErase(SeqList* ps, int pos)
 {
 	assert(ps);
@@ -93,25 +93,25 @@ void SeqListErase(SeqList* ps, int pos)
 
 	ps->size--;
 }
-//»ñÈ¡ÔªËØ¸öÊı
+//è·å–å…ƒç´ ä¸ªæ•°
 int SeqListSize(SeqList* ps)
 {
 	assert(ps);
 	return ps->size;
 }
-//»ñÈ¡ÈİÁ¿
+//è·å–å®¹é‡
 int SeqListCapacity(SeqList* ps)
 {
 	assert(ps);
 	return ps->capacity;
 }
-//ÅĞ¶ÏË³Ğò±íÊÇ·ñÎª¿Õ
+//åˆ¤æ–­é¡ºåºè¡¨æ˜¯å¦ä¸ºç©º
 int SeqListEmpty(SeqList* ps)
 {
 	assert(ps);
 	return ps->size == 0 ? 0 : ps->size;
 }
-//²éÕÒÄ³¸öÔªËØ
+//æŸ¥æ‰¾æŸä¸ªå…ƒç´ 
 int SeqListFind(SeqList* ps, DataType data)
 {
 	assert(NULL);
@@ -122,7 +122,7 @@ int SeqListFind(SeqList* ps, DataType data)
 	}
 	return -1;
 }
-//À©Èİµ½capacity
+//æ‰©å®¹åˆ°capacity
 void SeqListReserve(SeqList* ps, int capacity)
 {
 	assert(ps);
@@ -133,7 +133,7 @@ void SeqListReserve(SeqList* ps, int capacity)
 	ps->capacity <<= 1;
 }
 
-//ÏÔÊ¾
+//æ˜¾ç¤º
 void SeqListPrint(SeqList* ps)
 {
 	assert(ps);
