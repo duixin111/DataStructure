@@ -18,6 +18,5 @@ int main()
 	SeqListPrint(&s);
 	//SeqListDestroy(&s);
 
-
 	return 0;
 }
