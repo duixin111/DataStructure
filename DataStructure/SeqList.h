@@ -14,28 +14,27 @@ typedef struct SeqList
 	int size;
 }SeqList;
 
-//³õÊ¼»¯Á´±í
+//åˆå§‹åŒ–é“¾è¡¨
 void SeqListInit(struct SeqList* ps, int initCap);
-//Çå¿ÕÁ´±í
+//æ¸…ç©ºé“¾è¡¨
 void SeqListDestroy(SeqList* ps);
-//Î²²åÒ»¸ödata
+//å°¾æ’ä¸€ä¸ªdata
 void SeqListPushBack(SeqList* ps, DataType data);
-//Î²É¾Ò»¸ödata
+//å°¾åˆ ä¸€ä¸ªdata
 void SeqListPopBack(SeqList* ps);
-//ÔÚposÎ»ÖÃ²åÈëdata
+//åœ¨posä½ç½®æ’å…¥data
 void SeqListInsert(SeqList* ps, int pos, DataType data);
-//ÔÚposÎ»ÖµÉ¾³ıdata
+//åœ¨posä½å€¼åˆ é™¤data
 void SeqListErase(SeqList* ps, int pos);
-//»ñÈ¡ÔªËØ¸öÊı
+//è·å–å…ƒç´ ä¸ªæ•°
 int SeqListSize(SeqList* ps);
-//»ñÈ¡ÈİÁ¿
+//è·å–å®¹é‡
 int SeqListCapacity(SeqList* ps);
-//ÅĞ¶ÏË³Ğò±íÊÇ·ñÎª¿Õ
+//åˆ¤æ–­é¡ºåºè¡¨æ˜¯å¦ä¸ºç©º
 int SeqListEmpty(SeqList* ps);
-//²éÕÒÄ³¸öÔªËØ
+//æŸ¥æ‰¾æŸä¸ªå…ƒç´ 
 int SeqListFind(SeqList* ps, DataType data);
-//À©Èİµ½capacity
+//æ‰©å®¹åˆ°capacity
 void SeqListReserve(SeqList* ps, int capacity);
-
-//ÏÔÊ¾
+//æ˜¾ç¤º
 void SeqListPrint(SeqList* ps);
